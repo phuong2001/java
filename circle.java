@@ -3,56 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package JP_7;
 
 /**
  *
  * @author Admin
  */
-public class circle {
+public class Circle {
     private double radius;
     private String color;
-//constructor khởi tạo  ddooois tượng
-    public circle(){
-        radius = 5;
-        color = "blue";
-    }
-    public circle(double radius){
-        this.radius = radius;
-    }
-    public circle(String color){
-        this.color = color;
-    }
-    public circle(double radius , String color){
-         this.radius = radius;
-          this.color = color;
-    }
-/**
- * lấy ra bán kính
- * @return 
- */
-public double getRadius(){
-    return radius;
-}
-/**
- * lấy ra màu sắc
- * @return 
- */
-public String getColor(){
-    return color;
-}
-/**
- * lấy ra diện tích
- * @return 
- */
-public double getArea(){
-    return radius * radius * Math.PI;
     
-}
-
-    @Override
+    public Circle(){
+        radius=1.0;
+        color="red";
+          System.out.println("construced ()");
+    }
+    public Circle (double radius){
+        this.radius=radius;
+        this.color="red";
+         System.out.println("construced a(radius)");
+    }
+    public Circle (double radius, String color){
+        this.radius=radius;
+        this.color=color;
+         System.out.println("construced a(radius,color)");
+    }
+    public double getRadius(){
+        return this.radius;
+    }
+    public String getColor(){
+        return this.color;
+    }
+    public void setRadius(double radius){
+        this.radius=radius;
+    }
+    public void setColor(String color){
+        this.color=color;
+    }
     public String toString() {
         return "circle{" + "radius=" + radius + ", color=" + color + '}';
     }
-
+    public double getArea(){
+        return this.radius*radius*Math.PI;
+    }
 }

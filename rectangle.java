@@ -3,55 +3,52 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package JP_7;
 
 /**
  *
  * @author Admin
  */
-public class rectangle {
-    private int width;
-    private int height;
+public class Rectangle extends Shape{
+    private double width;
+    private double length;
     
-    public rectangle(){
-        width = 10;
-        height = 5;
+    public Rectangle(){
+        width=1;
+        length=1;
     }
-    public rectangle(int width, int height){
-        this.width = width;
-        this.height = height;
+    public Rectangle(double width,double length){
+        this.width=width;
+        this.length=length;
     }
-    public void display(){
-        for(int i=0;i<=width;i++){
-            for(int j=0;j<=height;j++){
-                System.out.println("#");
-            }
-        }
+    public Rectangle(double width,double length,String color,boolean filled){
+        super(color,filled);
+        this.width=width;
+        this.length=length;
     }
-    // tinh dien tich
-    public int getArea(){
-        return this.width * height;
-    }
-    public void setHeight(int value){
-        this.height=value;
-    }
-    //chu vi
-    public int getPerimeter(){
-        return this.width*2 + height*2;
-    }
-    public int getHeight(){
-        return this.height;
-    }
-    public int getWidth(){
+    public double getWidth(){
         return this.width;
     }
-    public void setWidth(int value){
-        this.width = value;
+    public double getLength(){
+        return this.length;
+    }
+    public void setWidth(double width){
+        this.width=width;
+    }
+    public void setLength(double length){
+        this.length=length;
+    }
+    public double getArea(){
+        return this.width*length;
+    }
+    public double getPerimater(){
+        return 2*width+2*length;
     }
 
     @Override
     public String toString() {
-        return "rectangle{" + "width=" + width + ", height=" + height + '}';
+        return "Rectangle{" + "width=" + width + ", length=" + length + '}';
     }
+    
     
 }
