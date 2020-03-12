@@ -3,41 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JP_7;
+package JP_11;
 
 /**
  *
  * @author Admin
  */
-public class MovablePoint extends Point{
-    private float xSpeed;
-    private float ySpeed;
+public  class MovablePoint implements Movable{
+    private  int x,y,xSpeed,ySpeed;
     
-    public MovablePoint(float x, float y, float xSpeed,float ySpeed){
-        super(x,y);
-        this.xSpeed=xSpeed;
-        this.ySpeed=ySpeed;
+    
+    public MovablePoint(int x,int y, int xSpeed, int ySpeed){
+        this.x = x;
+        this.y = y;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
-    public MovablePoint(float xSpeed, float ySpeed){
-        this.xSpeed=xSpeed;
-        this.ySpeed=ySpeed;
+    void setMoveUp(){
+        y-= ySpeed;
     }
-    public MovablePoint(){
-        xSpeed=0;
-        ySpeed=0;
+    void setMoveDown(){
+        y+= ySpeed;
     }
-    public float getXSpeed(){
-        return this.xSpeed;
+    void setMoveLeft(){
+        x-= xSpeed;
     }
-    public float getYSpeed(){
-        return this.ySpeed;
+    void setMoveRight(){
+        x+= xSpeed;
     }
-    public void setXSpeed(float xSpeed){
-        this.xSpeed=xSpeed;
+
+    @Override
+    public String toString() {
+        return "MovablePoint{" + "x=" + x + ", y=" + y + ", xSpeed=" + xSpeed + ", ySpeed=" + ySpeed + '}';
     }
-    public void setYSpeed(float ySpeed){
-        this.ySpeed=ySpeed;
-    }
-   
-   
+    
 }
+
+ 

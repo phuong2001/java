@@ -3,34 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JP_7;
+package JP_11;
 
 /**
  *
  * @author Admin
  */
-public class Shape {
+abstract public class Shape {
     private String color;
-    private boolean filled;
+    private Boolean filled;
     
     public Shape(){
-        color = "red";
+        color = "RED";
         filled = true;
     }
-    public Shape (String color,boolean filled){
-        this.color=color;
-        this.filled=filled;
+    public Shape(String color, Boolean filled){
+        this.color = color;
+        this.filled = filled;
     }
     public String getColor(){
-        return this.color;
+        return color;
     }
     public void setColor(String color){
-        this.color=color;
+        this.color = color;
     }
+    abstract public double getArea();
+    abstract public double getPerimeter();
 
     @Override
     public String toString() {
-        return "Shape{" + "color=" + color + ", filled=" + filled + '}';
+        return "Shape[color = " + color + ", filled = " + filled + "";
     }
     
 }
